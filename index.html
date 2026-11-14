@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Misi Penyelamatan di Labirin Ajaib</title><link rel="stylesheet" href="style.css"></head><body>
+<div id="app"><div id="main">
+<header id="hud"><span id="ltitle"></span><button id="snd" class="icon" aria-label="Suara"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 4V5L7 9z" fill="#4a2c10"/><path id="wave" d="M15 8a5 5 0 010 8M18 5a9 9 0 010 14" stroke="#4a2c10" stroke-width="2" fill="none"/></svg></button></header>
+<div id="view"><canvas id="cv"></canvas>
+<div id="boss" class="hidden"><div id="bh"></div><div id="bmon"><img alt="Monster Penjaga"></div>
+<div id="bpanel"><div id="bt"></div><div id="bq"></div></div><div id="bf"></div></div></div></div>
+<div id="dpad"><button data-d="up" style="grid-area:1/2" aria-label="Atas"><svg viewBox="0 0 24 24"><path d="M12 5l8 12H4z" fill="#5b3a1e"/></svg></button>
+<button data-d="left" style="grid-area:2/1" aria-label="Kiri"><svg viewBox="0 0 24 24"><path d="M12 5l8 12H4z" fill="#5b3a1e"/></svg></button>
+<button data-d="right" style="grid-area:2/3" aria-label="Kanan"><svg viewBox="0 0 24 24"><path d="M12 5l8 12H4z" fill="#5b3a1e"/></svg></button>
+<button data-d="down" style="grid-area:3/2" aria-label="Bawah"><svg viewBox="0 0 24 24"><path d="M12 5l8 12H4z" fill="#5b3a1e"/></svg></button></div></div>
+<div id="start" class="ov"><div class="card"><h1>Misi Penyelamatan<br>di Labirin Ajaib</h1><div id="cast"></div><button id="play" class="btn">MAIN</button></div></div>
+<div id="quiz" class="ov hidden"><div class="card"><div id="qdots"></div><h2 id="qtext"></h2><button id="qsay" class="btn small">Dengar lagi</button><div id="qvis"></div><div id="qch"></div></div></div>
+<div id="reward" class="ov hidden"><div class="card"><h1 id="rt"></h1><p id="rs"></p><div id="stars"></div><button id="rb" class="btn"></button></div></div>
+<script src="src/sprites.js"></script><script src="src/questions.js"></script><script src="src/audio.js"></script><script src="src/game.js"></script>
+</body></html>
