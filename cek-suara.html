@@ -1,0 +1,10 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cek File Suara</title>
+<style>body{font-family:sans-serif;margin:16px}td,th{border:1px solid #ccc;padding:4px 8px;text-align:left}.ok{color:#2e7d32;font-weight:700}.no{color:#c62828}</style></head><body>
+<h2>Cek File Suara Narator</h2><p>Halaman ini memeriksa file mana di <code>assets/voice/</code> yang sudah ada. Buka: <i>alamat-situs-anda</i>/cek-suara.html</p><p id="sum"></p><table id="t"><tr><th>ID</th><th>Status</th><th>Teks</th></tr></table>
+<script src="src/config.js"></script><script src="src/data.js"></script><script src="src/voice-lines.js"></script><script>
+let ok=0,n=0;const ids=Object.keys(VOICE_LINES);
+ids.forEach(id=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${id}</td><td>memeriksa...</td><td>${VOICE_LINES[id]}</td>`;document.getElementById('t').appendChild(tr);
+ const a=new Audio(CONFIG.voiceDir+id+'.'+CONFIG.voiceExt);a.preload='metadata';
+ a.onloadedmetadata=()=>{ok++;tr.children[1].innerHTML='<span class="ok">ADA</span>';done();};a.onerror=()=>{tr.children[1].innerHTML='<span class="no">BELUM ADA</span>';done();};});
+function done(){n++;document.getElementById('sum').textContent=`Sudah ada: ${ok} dari ${ids.length} file (diperiksa ${n}).`;}
+</script></body></html>

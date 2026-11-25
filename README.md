@@ -1,24 +1,15 @@
-# Misi Penyelamatan di Labirin Ajaib
-Game edukatif 2D top-down untuk anak TK A (4-5 tahun). 3 level: Labirin Sahabat Hewan, Labirin Tantangan Logika, Boss Gelembung Angka.
-Teknologi: HTML + CSS + JavaScript murni (Canvas). **Tanpa build, tanpa npm, tanpa backend.** Cukup unggah ke GitHub lalu Vercel.
+# Misi Penyelamatan di Labirin Ajaib - V2 Final
+Game edukatif 2D top-down (TK A, 4-5 tahun). HTML + CSS + JavaScript murni (Canvas). Tanpa build, npm, atau backend; langsung jalan di Vercel sebagai situs statis.
+
+## Isi V2
+Prolog 4 adegan animasi, adegan penyelamatan kelinci, halaman akhir, musik latar (4 suasana), efek suara, pengaturan volume, tombol Lanjut di semua transisi, apel semi-realistis, animasi monyet 4 arah, ekspresi kelinci/monster. Level 1-3 dan bank soal tetap seperti V1.
 
 ## Struktur
-- `index.html`, `style.css` : halaman dan tampilan
-- `src/sprites.js` : semua gambar pixel art (dibuat dari kode, orisinal)
-- `src/questions.js` : **BANK SOAL** (tempat menambah/mengubah soal)
-- `src/audio.js` : efek suara dan narasi bahasa Indonesia
-- `src/game.js` : labirin, kontrol, kuis, boss, reward
-- `docs/TUTORIAL.md` : panduan GitHub + Vercel
-- `vercel.json` : pengaturan Vercel
+- `index.html`, `style.css`, `cek-suara.html` (cek file suara mana yang sudah ada)
+- `src/config.js` kecepatan, durasi transisi, volume | `src/data.js` **bank soal & peta** | `src/voice-lines.js` **naskah suara**
+- `src/sprites.js` gambar pixel art | `src/questions.js` logika soal | `src/audio.js` musik & efek | `src/voice.js` narasi | `src/scenes.js` adegan cerita | `src/game.js` gameplay
+- `assets/voice/` tempat file suara narator (.mp3)
+- `docs/` tutorial, naskah suara, panduan suara anak, catatan perubahan, laporan pengujian
 
-## Kontrol
-HP/tablet: D-pad di layar. Laptop/PC: tombol panah atau WASD. Jawaban: ketuk/klik gambar.
-
-## Narasi suara
-Memakai Text-to-Speech bawaan browser (bahasa id-ID). Keterbatasan: kualitas suara tergantung perangkat; jika suara Indonesia tidak tersedia, narasi mungkin diam atau memakai suara lain, tetapi game tetap bisa dimainkan lewat tulisan, gambar, dan efek suara. Tombol "Dengar lagi" mengulang pertanyaan. Opsi lain (belum dipakai): rekaman suara sendiri, lebih konsisten tetapi harus direkam dan ditambah sebagai file.
-
-## Mengubah soal
-Buka `src/questions.js`. Tiap tabel diberi komentar. Contoh: tambah hewan -> tambahkan di `ANIMAL_SOUND` (gambar hewan harus ada di `sprites.js`); tambah pola -> tambah baris di `PATTERNS`; tambah penjumlahan -> tambah `[a,b]` di `ADDITIONS`.
-
-## Aturan yang dipakai (sesuai persetujuan)
-Level 1: 1 soal acak. Level 2: 1 pintu, 3 soal berurutan. Level 3: 4 soal (nyawa monster 4). Bintang: 0 salah = 3, 1-2 salah = 2, 3+ salah = 1. Tidak ada game over.
+## Suara narator
+Game memutar `assets/voice/<ID>.mp3`. Jika file belum ada, memakai suara bawaan browser (id-ID) sebagai cadangan; itu suara dewasa, bukan suara anak. Lihat `docs/PANDUAN-SUARA-ANAK.md`.
